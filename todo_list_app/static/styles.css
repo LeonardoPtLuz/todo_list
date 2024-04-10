@@ -1,0 +1,145 @@
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #0e0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Estilos para o título */
+h1 {
+    background-color: #333;
+    color: #e3e6e9;
+    text-align: center;
+    padding: 20px 0; /* Adicionando um espaçamento interno */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    width: 100%;
+    margin: 0; /* Removendo margens para evitar espaços indesejados */
+    padding: 20px;
+    
+}
+
+/* Estilos para o formulário de adição de tarefas */
+form {
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* Estilos para o campo de texto */
+input[type="text"] {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 12px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+}
+/* Estilos para o botão de adicionar */
+input[type="submit"] {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+/* Estilos para o botão de adicionar quando hover */
+input[type="submit"]:hover {
+    background-color: #0aad54;
+}
+
+/* Estilos para a lista de tarefas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para cada item da lista */
+li {
+    background-color: #333;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+    position: relative;
+}
+/* Estilos para cada item da lista quando hover */
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px #646464;
+}
+/* Estilos para o formulário de exclusão */
+.delete-form {
+    padding-top: 0px;
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Estilos para o botão de excluir */
+.delete-form input[type="submit"] {
+    background-color: #bb2433;
+    transition: background-color 0.3s;
+}
+/* Estilos para o botão de excluir quando hover */
+.delete-form input[type="submit"]:hover {
+    background-color: #ff1b31;
+}
+
+ /* Estilos para os botões de status */
+.status-btn {
+    width: 15px; /* Definindo largura */
+    height: 15px; /* Definindo altura */
+    border: none;
+    border-radius: 50%; /* Transformando em botões circulares */
+    cursor: pointer;
+    margin-right: 5px; /* Margem entre os botões */
+    justify-content: center; /* Centralizando conteúdo horizontalmente */
+    align-items: center; /* Centralizando conteúdo verticalmente */
+}
+
+.status-btn.clicked {
+    background-color: white; /* Nova cor quando clicado */
+}
+
+.red-btn.clicked {
+    background-color: #ff1b31;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+}
+
+.green-btn.clicked {
+    background-color: #05e76b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+}
+
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #333; /* Cor de fundo do rodapé */
+    width: 100%;
+    padding:15px 0; /* Espaçamento interno no rodapé */
+    text-align: left; /* Alinhamento de texto no centro */
+    position: fixed; /* Fixar o rodapé na tela */
+    bottom: 0; /* Posicionamento na parte inferior da tela */
+    font-style: italic;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-left: 40px;
+}

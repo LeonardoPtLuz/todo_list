@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+<h1>TODO LIST</h1>
+
+<!-- Formulário para adicionar nova tarefa -->
+<form action="/add_todo_item/" method="post">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="Adicionar uma nova tarefa..." maxlength="30" required>
+    <input type="submit" value="ADD">
+</form>
+
+<!-- Lista de tarefas -->
+<ul>
+    <!-- Loop para exibir todas as tarefas -->
+    {% for i in all_items %}
+    <li>
+        <span>{{i.content}}</span>
+        <!-- Formulário para excluir uma tarefa -->
+        <div class="buttons">
+            <button type="submit" name="status" value="done" class="status-btn green-btn"></button>
+            <button type="submit" name="status" value="pending" class="status-btn red-btn"></button>
+        </div>
+        <form class="delete-form" action="/delete_todo_item/{{i.id}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="X">
+        </form>
+    </li>
+    <!-- Fim do loop -->
+    {% endfor %}
+</ul>
+
+<footer>
+    <i class="fab fa-python"></i>
+    <p>Leonardo Luz</p>
+</footer>
+
+
+<!-- Script JavaScript para adicionar a classe "clicked" ao botão quando clicado -->
+<script>
+    // Selecionar todos os botões com a classe "status-btn"
+    var buttons = document.querySelectorAll('.status-btn');
+
+    // Função para lidar com o clique em um botão
+    function handleClick() {
+        // Verificar se o botão já está clicado
+        var isClicked = this.classList.contains('clicked');
+
+        // Remover a classe "clicked" de todos os botões
+        buttons.forEach(function(btn) {
+            btn.classList.remove('clicked');
+        });
+
+        // Adicionar a classe "clicked" apenas ao botão clicado, se não estiver clicado
+        if (!isClicked) {
+            this.classList.add('clicked');
+        }
+    }
+
+    // Adicionar um ouvinte de evento de clique a cada botão
+    buttons.forEach(function(button) {
+        button.addEventListener('click', handleClick);
+    });
+</script>
+
+</body>
+</html>

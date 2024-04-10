@@ -1,0 +1,6 @@
+<li>
+    <form action="/delete_todo_item/{{i.id}}/" method="post">
+        {% csrf_token %}
+        <input type="submit", value="Delete">
+    </form>
+</li>
